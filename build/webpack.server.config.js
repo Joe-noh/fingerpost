@@ -17,3 +17,5 @@ const config = Object.assign({}, base, {
     })
   ]
 });
+
+module.exports = config;

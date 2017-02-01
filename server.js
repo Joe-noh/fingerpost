@@ -48,7 +48,7 @@ function parseIndex(template) {
 }
 
 const serve = (path, cache) => {
-  express.static(resolve(path), {
+  return express.static(resolve(path), {
     maxAge: (cache && isProduction) ? 60 * 60 * 24 * 30 : 0
   });
 }

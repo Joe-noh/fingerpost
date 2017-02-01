@@ -29,7 +29,7 @@ module.exports = function setupDevServer(app, opts) {
     const fs = devMiddleware.fileSystem;
     const filePath = path.join(clientConfig.output.path, 'index.html');
 
-    if (fs.existsSyn(filePath)) {
+    if (fs.existsSync(filePath)) {
       const index = fs.readFileSync(filePath, 'utf-8');
       opts.indexUpdated(index);
     }
@@ -45,7 +45,7 @@ module.exports = function setupDevServer(app, opts) {
   serverCompiler.watch({}, (err, stats) => {
     if (err) { throw err; }
 
-    stats = stats.toJSON();
+    stats = stats.toJson();
     stats.errors.forEach(err => console.error(err));
     stats.warnings.forEach(warn => console.warn(warn));
 

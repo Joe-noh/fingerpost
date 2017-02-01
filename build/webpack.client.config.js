@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 const base = require('./webpack.base.config');
 const vueConfig = require('./vue-loader.config');
-const HTMLPlugin = requrie('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-plugin');
-// const SWPrecachePlugin = require('sw-precache-plugin');
+const HTMLPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const SWPrecachePlugin = require('sw-precache-webpack-plugin');
 
 const config = Object.assign({}, base, {
   plugins: (base.plugins || []).concat([
