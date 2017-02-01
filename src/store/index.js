@@ -5,10 +5,18 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    foo: ""
+    spec: {}
   },
-  actions: {},
-  mutations: {},
+  actions: {
+    FETCH_SPEC: (store, {url}) => {
+      return store.commit('SET_SPEC', {spec: {v: 2}});
+    }
+  },
+  mutations: {
+    SET_SPEC: (state, {spec}) => {
+      state.spec = spec;
+    }
+  },
   getters: {}
 });
 
