@@ -6,7 +6,7 @@
   export default {
     name: 'hello-view',
     preFetch: (store) => {
-      console.log(store);
+      console.log('preFetch in Hello');
     }
   };
 </script>
