@@ -4,10 +4,9 @@
     </div>
 </template>
 
-<style lang="sass">
-  .router-view {
+<style lang="stylus">
+  .router-view
     max-width: 960px
     margin: 0 auto
     position: relative
-  }
 </style>
