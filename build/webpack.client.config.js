@@ -35,7 +35,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warning: false
+        warnings: false
       }
     }) //,
     // new SWPrecachePlugin({
