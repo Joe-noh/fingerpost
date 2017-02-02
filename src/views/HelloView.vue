@@ -11,7 +11,7 @@
 <script>
 function fetchSpec(store) {
   let url = 'http://petstore.swagger.io/v2/swagger.json';
-  store.dispatch('FETCH_SPEC', {url});
+  return store.dispatch('FETCH_SPEC', {url});
 }
 
 export default {

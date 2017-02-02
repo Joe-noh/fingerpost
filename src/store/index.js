@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
 
 Vue.use(Vuex);
 
@@ -8,8 +9,10 @@ const store = new Vuex.Store({
     spec: {}
   },
   actions: {
-    FETCH_SPEC: (store, {url}) => {
-      return store.commit('SET_SPEC', {spec: {v: 2}});
+    FETCH_SPEC: ({commit}, {url}) => {
+      return axios.get(url).then(res => {
+        commit('SET_SPEC', {spec: res.data});
+      });
     }
   },
   mutations: {
