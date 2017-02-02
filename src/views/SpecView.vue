@@ -16,20 +16,24 @@
 
             <b>Parameters</b>
             <table border="1">
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Description</th>
-              </tr>
-              <tr v-for="param in methodSpec.parameters">
-                <td>{{param.name}}<span v-if="param.required">*</span></td>
-                <td v-if="param.type">{{param.type}}</td>
-                <td v-else-if="param.schema">
-                  <a :href="param.schema.$ref | definitionId">{{param.schema.$ref | definitionModelName}}</a>
-                </td>
-                <td v-else></td>
-                <td>{{param.description}}</td>
-              </tr>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="param in methodSpec.parameters">
+                  <td>{{param.name}}<span v-if="param.required">*</span></td>
+                  <td v-if="param.type">{{param.type}}</td>
+                  <td v-else-if="param.schema">
+                    <a :href="param.schema.$ref | definitionId">{{param.schema.$ref | definitionModelName}}</a>
+                  </td>
+                  <td v-else></td>
+                  <td>{{param.description}}</td>
+                </tr>
+              </tbody>
             </table>
             <br>
 
@@ -58,16 +62,20 @@
         <dt :id="modelName">{{modelName}}</dt>
         <dd>
           <table border="1">
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Description</th>
-            </tr>
-            <tr v-for="(prop, propName) in model.properties">
-              <td>{{propName}}</td>
-              <td>{{prop.type}}</td>
-              <td>{{prop.description}}</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(prop, propName) in model.properties">
+                <td>{{propName}}</td>
+                <td>{{prop.type}}</td>
+                <td>{{prop.description}}</td>
+              </tr>
+            </tbody>
           </table>
         </dd>
       </template>
