@@ -1,10 +1,6 @@
 <template>
   <div>
-    <p>Hello</p>
-
-    <div>
-      {{spec}}
-    </div>
+    <pre><code>{{spec}}</code></pre>
   </div>
 </template>
 
