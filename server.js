@@ -92,6 +92,8 @@ app.get('*', (req, res) => {
     } else {
       res.status(500).end('Server Error');
     }
+
+    console.error(err);
   });
 });
 
