@@ -1,5 +1,7 @@
 {
   "name": "fingerpost",
+  "version": "0.0.1",
+  "main": "lib/app.js",
   "repository": "https://github.com/Joe-noh/fingerpost",
   "author": "Joe-noh <goflb.jh@gmail.com>",
   "license": "MIT",
@@ -7,6 +9,12 @@
     "node": ">=6.0",
     "npm": ">=3.0"
   },
+  "files": [
+    "README",
+    "LICENSE",
+    "lib",
+    "bin"
+  ],
   "scripts": {
     "compile": "babel --presets es2015 -d lib/ src/",
     "prepublish": "npm run compile"
