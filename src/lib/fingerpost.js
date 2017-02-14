@@ -8,4 +8,4 @@ class Fingerpost {
   }
 }
 
-export default new Fingerpost();
+export default Fingerpost;
