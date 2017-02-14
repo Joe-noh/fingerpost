@@ -1,7 +1,7 @@
 {
   "name": "fingerpost",
   "version": "0.0.1",
-  "main": "src/lib/fingerpost.js",
+  "main": "dist/lib/fingerpost.js",
   "repository": "https://github.com/Joe-noh/fingerpost",
   "author": "Joe-noh <goflb.jh@gmail.com>",
   "license": "MIT",
@@ -9,12 +9,13 @@
     "node": ">=6.0",
     "npm": ">=3.0"
   },
-  "bin": "dist/bin/bin.js",
+  "bin": {
+    "fingerpost": "./dist/bin/bin.js"
+  },
   "files": [
     "README",
     "LICENSE",
-    "lib",
-    "bin"
+    "dist"
   ],
   "scripts": {
     "compile": "babel --presets es2015 -d dist/ src/",
