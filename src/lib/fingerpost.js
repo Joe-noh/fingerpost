@@ -1,11 +1,12 @@
 import axios from 'axios';
 
 class Fingerpost {
-  constructor(url) {
-    this.url = url;
+  constructor(opts) {
+    this.url = opts.url;
+    this.template = opts.template;
   }
 
-  fetch() {
+  dump(_path) {
     axios.get(this.url).then(res => {
       console.log(res.data);
     });
