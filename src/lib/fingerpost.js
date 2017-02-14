@@ -1,10 +1,14 @@
+import axios from 'axios';
+
 class Fingerpost {
-  constructor() {
-    this.hello = "hello";
+  constructor(url) {
+    this.url = url;
   }
 
-  say() {
-    console.log(this.hello);
+  fetch() {
+    axios.get(this.url).then(res => {
+      console.log(res.data);
+    });
   }
 }
 
