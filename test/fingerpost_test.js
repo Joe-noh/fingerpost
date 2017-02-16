@@ -1,8 +1,8 @@
 import Fingerpost from '../src/lib/fingerpost';
-import assert from 'assert';
+import {expect} from 'chai';
 
 describe('Fingerpost', () => {
   it('is ok', () => {
-    assert.equal(Fingerpost, Fingerpost);
+    expect(Fingerpost).to.equal(Fingerpost);
   });
 });
