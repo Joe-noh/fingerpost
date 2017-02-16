@@ -18,8 +18,14 @@
     "dist"
   ],
   "scripts": {
-    "compile": "babel --presets es2015 -d dist/ src/",
+    "compile": "babel -d dist/ src/",
+    "test": "mocha --compilers js:babel-core/register -R landing",
     "prepublish": "npm run compile"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   },
   "dependencies": {
     "axios": "0.15.3",
@@ -27,6 +33,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
-    "babel-preset-es2015": "^6.22.0"
+    "babel-preset-es2015": "^6.22.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   }
 }
