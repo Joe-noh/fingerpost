@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "compile": "babel -d dist/ src/",
-    "test": "mocha --compilers js:babel-core/register",
+    "test": "mocha --compilers js:babel-core/register -R landing",
     "prepublish": "npm run compile"
   },
   "babel": {
