@@ -18,8 +18,14 @@
     "dist"
   ],
   "scripts": {
-    "compile": "babel --presets es2015 -d dist/ src/",
+    "compile": "babel -d dist/ src/",
+    "test": "mocha --compilers js:babel-core/register",
     "prepublish": "npm run compile"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   },
   "dependencies": {
     "axios": "0.15.3",
