@@ -5,12 +5,14 @@ import Fingerpost from '../lib/fingerpost';
 
 commander
   .option('-u, --url <url>', 'json URL')
-  .option('-t, --template <dir>', 'path to template directory')
+  .option('-s, --src <dir>', 'path to src template directory')
+  .option('-d, --dest <dir>', 'path to output directory')
   .parse(process.argv);
 
 let fingerpost = new Fingerpost({
   url: commander.url,
-  template: commander.template
+  src: commander.src,
+  dest: commander.dest
 });
 
-fingerpost.dump('./');
+fingerpost.dump();
