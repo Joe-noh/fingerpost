@@ -27,7 +27,7 @@ describe('DirWalker', () => {
     });
 
     it('transforms file content', () => {
-      walker.copy(src, dest, (src => 'hey'));
+      walker.copy(src, dest, {transform: (src => 'hey')});
 
       expect(fs.readFileSync(path.join(dest, 'a.txt'), 'utf8')).to.eql('hey');
       expect(fs.readFileSync(path.join(dest, 'a', 'b.txt'), 'utf8')).to.eql('hey');

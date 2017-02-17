@@ -4,7 +4,7 @@ import fs from 'fs';;
 class DirWalker {
   constructor() {}
 
-  copy(src, dest, transformer) {
+  copy(src, dest, opts = {}) {
     if (!fs.existsSync(src)) { return; }
 
     let stats = fs.statSync(src);
@@ -13,11 +13,11 @@ class DirWalker {
 
       let files = fs.readdirSync(src);
       files.forEach(file => {
-        this.copy(path.join(src, file), path.join(dest, file), transformer);
+        this.copy(path.join(src, file), path.join(dest, file), opts);
       });
     } else {
-      if (transformer) {
-        let content = transformer(src);
+      if (opts.transform) {
+        let content = opts.transform(src);
         fs.writeFileSync(dest, content);
       } else {
         fs.linkSync(src, dest);
