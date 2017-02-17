@@ -5,7 +5,7 @@
 #### CLI
 
 ```console
-$ fingerpost --url http://petstore.swagger.io/v2/swagger.json --template ./path/to/tmeplates
+$ fingerpost --url http://petstore.swagger.io/v2/swagger.json --src ./path/to/templates --dest /path/to/output
 ```
 
 #### API
@@ -14,9 +14,11 @@ $ fingerpost --url http://petstore.swagger.io/v2/swagger.json --template ./path/
 import Fingerpost from 'fingerpost';
 
 let fingerpost = new Fingerpost({
-  url: "http://petstore.swagger.io/v2/swagger.json",
-  template: "./path/to/tmeplates"
+  url: 'http://petstore.swagger.io/v2/swagger.json',
+  src: './path/to/templates',
+  dest: './path/to/output'
 });
 
-fingerpost.dump('/path/to/output');
+fingerpost.dump();
+//=> returns promise
 ```
