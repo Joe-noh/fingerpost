@@ -19,11 +19,22 @@ class DirWalker {
       if (opts.only && !opts.only(src)) { return; }
 
       if (opts.transform) {
-        let content = opts.transform(src);
-        fs.writeFileSync(dest, content);
+        if (opts.transformIf) {
+          this.conditionallyTransform(src, dest, opts);
+        } else {
+          fs.writeFileSync(dest, opts.transform(src));
+        }
       } else {
         fs.linkSync(src, dest);
       }
+    }
+  }
+
+  conditionallyTransform(src, dest, opts) {
+    if (opts.transformIf(src)) {
+      fs.writeFileSync(dest, opts.transform(src));
+    } else {
+      fs.linkSync(src, dest);
     }
   }
 }

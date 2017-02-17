@@ -40,5 +40,16 @@ describe('DirWalker', () => {
       expect(fs.existsSync(path.join(dest, 'a.txt'))).to.eql(false);
       expect(fs.existsSync(path.join(dest, 'a', 'b.txt'))).to.eql(true);
     });
+
+    it('transforms if transformIf be true', () => {
+      walker.copy(src, dest, {
+        transform: (src => 'hey'),
+        transformIf: (src => path.basename(src) == 'b.txt')
+      });
+
+      expect(fs.readFileSync(path.join(dest, 'a.txt'), 'utf8')).not.to.eql('hey');
+      expect(fs.readFileSync(path.join(dest, 'a', 'b.txt'), 'utf8')).to.eql('hey');
+
+    })
   });
 });
